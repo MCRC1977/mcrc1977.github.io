@@ -222,6 +222,37 @@ main {
     z-index: 1;
 }
 
+.school-photo-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(43, 58, 74, 0.08);
+    box-shadow: 0 12px 24px rgba(28, 36, 52, 0.12);
+}
+
+.school-photo {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-caption {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    background: rgba(28, 36, 52, 0.72);
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 .card-badge {
     display: inline-block;
     margin-bottom: 1.2rem;
@@ -318,7 +349,7 @@ main {
     display: flex;
     width: max-content;
     gap: 1.25rem;
-    animation: memoryScroll 30s linear infinite;
+    animation: memoryScroll 100s linear infinite;
 }
 
 .memory-card {
