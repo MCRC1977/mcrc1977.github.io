@@ -282,6 +282,126 @@ main {
     color: var(--muted);
 }
 
+.memory-section {
+    padding: 1rem 0 2rem;
+}
+
+.memory-marquee {
+    position: relative;
+    overflow: hidden;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0 1rem;
+}
+
+.memory-marquee::before,
+.memory-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.memory-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(246, 239, 232, 1) 0%, rgba(246, 239, 232, 0) 100%);
+}
+
+.memory-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(246, 239, 232, 1) 0%, rgba(246, 239, 232, 0) 100%);
+}
+
+.memory-track {
+    display: flex;
+    width: max-content;
+    gap: 1.25rem;
+    animation: memoryScroll 30s linear infinite;
+}
+
+.memory-card {
+    flex: 0 0 220px;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(43,58,74,0.08);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 14px 30px rgba(18, 18, 18, 0.06);
+}
+
+.memory-card:hover {
+    transform: translateY(-3px);
+    transition: transform 0.2s ease;
+}
+
+.memory-photo {
+    position: relative;
+    display: grid;
+    place-items: center;
+    height: 250px;
+    overflow: hidden;
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.memory-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.memory-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(0,0,0,0.18));
+    z-index: 1;
+}
+
+.memory-photo span {
+    position: relative;
+    z-index: 1;
+}
+
+.photo-one { background: linear-gradient(135deg, #4d615d, #8b6f52); }
+.photo-two { background: linear-gradient(135deg, #6f4d5a, #b38a63); }
+.photo-three { background: linear-gradient(135deg, #33486d, #a77451); }
+.photo-four { background: linear-gradient(135deg, #504d66, #c58f5c); }
+.photo-five { background: linear-gradient(135deg, #5d4d44, #8d7a6f); }
+.photo-six { background: linear-gradient(135deg, #3f5963, #8d7d57); }
+
+.memory-copy {
+    padding: 1rem 1rem 1.2rem;
+    text-align: center;
+}
+
+.memory-copy h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2rem;
+    color: var(--midnight);
+    margin-bottom: 0.2rem;
+}
+
+.memory-copy p {
+    color: var(--rose);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+@keyframes memoryScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 0.625rem));
+    }
+}
+
 .schedule {
     padding: 1rem 0 2rem;
 }
