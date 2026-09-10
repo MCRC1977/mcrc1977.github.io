@@ -374,6 +374,7 @@ main {
 .photo-four { background: linear-gradient(135deg, #504d66, #c58f5c); }
 .photo-five { background: linear-gradient(135deg, #5d4d44, #8d7a6f); }
 .photo-six { background: linear-gradient(135deg, #3f5963, #8d7d57); }
+.photo-seven { background: linear-gradient(135deg, #3f5963, #8d7d57); }
 
 .memory-copy {
     padding: 1rem 1rem 1.2rem;
