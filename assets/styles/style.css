@@ -30,6 +30,9 @@ body {
         radial-gradient(circle at 12% 8%, rgba(224, 111, 37, 0.12), transparent 26rem),
         linear-gradient(135deg, rgba(24, 24, 22, 0.025) 25%, transparent 25%) 0 0 / 28px 28px,
         #f8f3e8;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 img {
@@ -57,6 +60,7 @@ select {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    width: 100%;
 }
 
 .brand-wrap {
@@ -120,6 +124,7 @@ main {
     max-width: 1160px;
     margin: 0 auto;
     padding: 0 2rem 3rem;
+    width: 100%;
 }
 
 .hero {
@@ -590,7 +595,12 @@ main {
 }
 
 .narrow {
-    max-width: 600px;
+    max-width: none;
+}
+
+.narrow h2 {
+    white-space: nowrap;
+    font-size: clamp(1.55rem, 7vw, 3.2rem);
 }
 
 .rsvp-box {
@@ -670,12 +680,39 @@ a:hover
 
 
 @media (max-width: 860px) {
+    .topbar {
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand-wrap {
+        justify-content: center;
+    }
+
+    .main-nav {
+        justify-content: center;
+    }
+
     .hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
         min-height: 0;
+        padding: 3rem 0;
+    }
+
+    .hero-copy {
+        max-width: 680px;
     }
 
     .hero-card {
-        max-width: 520px;
+        width: 100%;
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .school-photo,
+    .venue-photo {
+        height: clamp(190px, 48vw, 260px);
     }
 
     .info-box {
@@ -697,44 +734,76 @@ a:hover
         border-left: 0;
         border-top: 1px solid rgba(24, 24, 22, 0.14);
     }
+
+    .rsvp-box {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 0;
+        margin-inline: auto;
+    }
+
+    .info-box {
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+        border-right: 0;
+        border-bottom: 1px solid rgba(38,53,47,0.18);
+    }
+
+    .info-box h3 {
+        max-width: 560px;
+        margin-inline: auto;
+        font-size: clamp(1.75rem, 7vw, 2.15rem);
+        line-height: 1.05;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .info-box p {
+        max-width: 620px;
+        margin-inline: auto;
+    }
+
+    .info-box:last-child {
+        border-bottom: 0;
+    }
 }
 
 @media (max-width: 560px) {
     .topbar,
     main {
+        width: 100%;
+        margin-inline: auto;
         padding-left: 1rem;
         padding-right: 1rem;
     }
 
-    .hero {
-        padding-top: 2.5rem;
-    }
-
-    .time-item {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-row {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn {
+    .info-grid {
         width: 100%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .main-nav {
-        gap: 0.8rem 1rem;
-        font-size: 0.9rem;
+    .info-box {
+        padding: 1.5rem 0.75rem;
+        text-align: center;
     }
 
-    .pre-reunion {
-        padding: 1.5rem;
-        border-left-width: 5px;
-        box-shadow: 6px 6px 0 rgba(224, 111, 37, 0.10);
+    .info-box h3 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(1.55rem, 8vw, 2rem);
+        line-height: 1.08;
     }
 
-    .pre-reunion-meta {
-        grid-template-columns: 1fr;
+    .info-box p,
+    .info-box .label {
+        width: 100%;
+        max-width: 100%;
     }
 }
